@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 /*
 	fizzbuzz(1)  should output 1
@@ -19,17 +22,21 @@ func main() {
 
 	res3 := fizzbuzz(3)
 	fmt.Println(res3)
+
+	res4 := fizzbuzz(4)
+	fmt.Println(res4)
 }
 
 func fizzbuzz(num int) string {
-	if num == 1 {
-		return "1"
+	res := ""
+
+	for i := 1; i <= num; i++ {
+		if i%3 == 0 {
+			res = res + "fizz"
+		} else {
+			res = res + strconv.Itoa(i)
+		}
+		res = res + " "
 	}
-	if num == 2 {
-		return "1 2"
-	}
-	if num == 3 {
-		return "1 2 fizz"
-	}
-	return ""
+	return res
 }
