@@ -25,6 +25,9 @@ func main() {
 
 	res4 := fizzbuzz(4)
 	fmt.Println(res4)
+
+	res5 := fizzbuzz(5)
+	fmt.Println(res5)
 }
 
 func fizzbuzz(num int) string {
@@ -33,6 +36,8 @@ func fizzbuzz(num int) string {
 	for i := 1; i <= num; i++ {
 		if i%3 == 0 {
 			res = res + "fizz"
+		} else if i%5 == 0 {
+			res = res + "buzz"
 		} else {
 			res = res + strconv.Itoa(i)
 		}
