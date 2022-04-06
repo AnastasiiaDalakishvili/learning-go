@@ -28,13 +28,25 @@ func main() {
 
 	res5 := fizzbuzz(5)
 	fmt.Println(res5)
+
+	res14 := fizzbuzz(14)
+	fmt.Println(res14)
+
+	res15 := fizzbuzz(15)
+	fmt.Println(res15)
+
+	res100 := fizzbuzz(100)
+	fmt.Println(res100)
 }
 
 func fizzbuzz(num int) string {
 	res := ""
 
 	for i := 1; i <= num; i++ {
-		if i%3 == 0 {
+
+		if i%3 == 0 && i%5 == 0 {
+			res = res + "fizzbuzz"
+		} else if i%3 == 0 {
 			res = res + "fizz"
 		} else if i%5 == 0 {
 			res = res + "buzz"
