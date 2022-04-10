@@ -19,6 +19,8 @@ func fizzbuzz(number int) string {
 	for i := 1; i <= number; i++ {
 		if i%3 == 0 {
 			fizzbuzzResult = fizzbuzzResult + "fizz"
+		} else if i%5 == 0 {
+			fizzbuzzResult = fizzbuzzResult + "buzz"
 		} else {
 			fizzbuzzResult = fizzbuzzResult + strconv.Itoa(i)
 		}
