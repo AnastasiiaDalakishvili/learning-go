@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 /*
 	1. fizzbuzz(1)  should output 1 DONE
@@ -10,12 +12,19 @@ import "testing"
 */
 
 func TestFizzbuzz(t *testing.T) {
+
+	assertMessage := func(t testing.TB, got, want string) {
+		t.Helper()
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	}
 	t.Run("number 1 passed to the function should return the number", func(t *testing.T) {
 		got := fizzbuzz(1)
 		want := "1"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			assertMessage(t, got, want)
 		}
 	})
 
@@ -24,7 +33,7 @@ func TestFizzbuzz(t *testing.T) {
 		want := "1 2 fizz"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			assertMessage(t, got, want)
 		}
 	})
 
@@ -33,7 +42,7 @@ func TestFizzbuzz(t *testing.T) {
 		want := "1 2 fizz 4 buzz"
 
 		if got != want {
-			t.Errorf("got %q want %q", got, want)
+			assertMessage(t, got, want)
 		}
 	})
 
