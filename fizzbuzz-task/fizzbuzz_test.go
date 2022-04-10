@@ -7,7 +7,7 @@ import (
 /*
 	1. fizzbuzz(1)  should output 1 DONE
 	2. fizzbuzz(3)  should output 1 2 fizz DONE
-	3. fizzbuzz(5) should output 1 2 fizz 4 buzz
+	3. fizzbuzz(5) should output 1 2 fizz 4 buzz DONE
 	4. fizzbuzz(15) should output 1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz
 */
 
@@ -40,6 +40,15 @@ func TestFizzbuzz(t *testing.T) {
 	t.Run("5 modulus of 5 should return buzz", func(t *testing.T) {
 		got := fizzbuzz(5)
 		want := "1 2 fizz 4 buzz"
+
+		if got != want {
+			assertMessage(t, got, want)
+		}
+	})
+
+	t.Run("15 modulus of 3 and 5 should return fizzbuzz", func(t *testing.T) {
+		got := fizzbuzz(15)
+		want := "1 2 fizz 4 buzz fizz 7 8 fizz buzz 11 fizz 13 14 fizzbuzz"
 
 		if got != want {
 			assertMessage(t, got, want)
