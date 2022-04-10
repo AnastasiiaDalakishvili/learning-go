@@ -11,7 +11,7 @@ import "testing"
 */
 
 func TestFizzbuzz(t *testing.T) {
-	got := Fizzbuzz(1)
+	got := fizzbuzz(1)
 	want := 1
 
 	if got != want {
