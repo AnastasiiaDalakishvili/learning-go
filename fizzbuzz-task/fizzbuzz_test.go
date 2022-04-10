@@ -12,7 +12,7 @@ import "testing"
 func TestFizzbuzz(t *testing.T) {
 	t.Run("number 1 passed to the function should return the number", func(t *testing.T) {
 		got := fizzbuzz(1)
-		want := 1
+		want := "1"
 
 		if got != want {
 			t.Errorf("got %q want %q", got, want)
