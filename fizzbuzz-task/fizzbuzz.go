@@ -11,6 +11,12 @@ func main() {
 
 	result3 := fizzbuzz(3)
 	fmt.Println(result3)
+
+	result5 := fizzbuzz(5)
+	fmt.Println(result5)
+
+	result15 := fizzbuzz(15)
+	fmt.Println(result15)
 }
 
 func fizzbuzz(number int) string {
