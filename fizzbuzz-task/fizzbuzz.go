@@ -17,13 +17,14 @@ func fizzbuzz(number int) string {
 	fizzbuzzResult := ""
 
 	for i := 1; i <= number; i++ {
-		if i%3 == 0 && i%5 == 0 {
+		switch {
+		case i%3 == 0 && i%5 == 0:
 			fizzbuzzResult = fizzbuzzResult + "fizzbuzz"
-		} else if i%5 == 0 {
-			fizzbuzzResult = fizzbuzzResult + "buzz"
-		} else if i%3 == 0 {
+		case i%3 == 0:
 			fizzbuzzResult = fizzbuzzResult + "fizz"
-		} else {
+		case i%5 == 0:
+			fizzbuzzResult = fizzbuzzResult + "buzz"
+		default:
 			fizzbuzzResult = fizzbuzzResult + strconv.Itoa(i)
 		}
 		if i != number {
